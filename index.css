@@ -29,17 +29,65 @@ body {
 
 h1 {
     font-family: Montserrat;
+    font-size: 40px;
     margin: 30px 0px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h2 {
+    font-size: 32px;
+}
+
+h3 {
     font-family: Manrope;
+    font-size: 22px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 p {
-    font-size: 20px;
+    font-size: 24px;
 }
 
-.container_img {
+.container_img_banniere {
+    width: 88%;
+    margin: 30px 0;
+}
+
+.container_img_carte_belgique {
     width: 100%;
+    margin-bottom: 40px;
+}
+
+.container_img_pop {
+    width: 64%;
+}
+
+.container_img_region {
+    width: 60%;
+}
+
+.container_img_netherlands {
+    width: 100%;
+}
+
+.mrg {
+    margin: 40px 0px;
+}
+
+.container_pop {
+    display: flex;
+    align-items: center;
+}
+
+.container_pop > p{
+    margin-left: 46px;
+}
+
+.container_region {
+    display: flex;
+    align-items: center;
+}
+
+.container_region > p{
+    margin-right: 46px;
 }
