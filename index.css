@@ -35,7 +35,7 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 34px;
 }
 
 h3 {
@@ -70,6 +70,10 @@ p {
     width: 100%;
 }
 
+.container_img_densite {
+    width: 60%;
+}
+
 .mrg {
     margin: 40px 0px;
 }
@@ -92,8 +96,11 @@ p {
     margin-right: 46px;
 }
 
+.container_densite {
+    display: flex;
+    align-items: center;
+}
 
-
-
-
-
+.container_densite > p{
+    margin-left: 46px;
+}
