@@ -104,3 +104,11 @@ p {
 .container_densite > p{
     margin-left: 46px;
 }
+
+.btm {
+    font-family: Montserrat;
+    font-size: 40px;
+    margin: 30px 0px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style: none;
+}
