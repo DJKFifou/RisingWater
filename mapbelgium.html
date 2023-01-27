@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Quick Start - Leaflet</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .leaflet-container {
+      height: 400px;
+      width: 600px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div id="map" style="width: 1200px; height: 800px;"></div>
+  <script>
+
+    const map = L.map('map').setView([50.505, 4.5], 8);
+
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var myLines = [{
+      "type": "LineString",
+      "coordinates": [[-100, 40], [-105, 45], [-110, 55]]
+    }, {
+      "type": "LineString",
+      "coordinates": [[-105, 40], [-110, 45], [-115, 55]]
+    }];
+
+
+    var myStyle = {
+      "color": "#ff7800",
+      "weight": 1,
+      "opacity": 0.65
+    };
+
+    let myd;
+    fetch('communes-belges-2019.geojson')
+      .then((response) => response.json())
+      .then((data) => {
+        myd = data
+        console.log("ICI=" + data)
+        L.geoJSON(myd, {
+          style: function (featureCollection) {
+            switch (featureCollection.properties.namedut){
+              case 'Alveringem' : return{color:"#555555"};
+              case 'Antwerpen' : return{color:"#555555"};
+              case 'Assenede' : return{color:"#555555"};
+              case 'Berlaar' : return{color:"#555555"};
+              case 'Berlare' : return{color:"#555555"};
+              case 'Beveren' : return{color:"#555555"};
+              case 'Blankenberge' : return{color:"#555555"};
+              case 'Bonheiden' : return{color:"#555555"};
+              case 'Boom' : return{color:"#555555"};
+              case 'Bornem' : return{color:"#555555"};
+              case 'Brasschaat' : return{color:"#555555"};
+              case 'Bredene' : return{color:"#555555"};
+              case 'Brugge' : return{color:"#555555"};
+              case 'Buggenhout' : return{color:"#555555"};
+              case 'Damme' : return{color:"#555555"};
+              case 'De Panne' : return{color:"#555555"};
+              case 'De Haan' : return{color:"#555555"};
+              case 'Dendermonde' : return{color:"#555555"};
+              case 'Destelbergen' : return{color:"#555555"};
+              case 'Duffel' : return{color:"#555555"};
+              case 'Berlaar' : return{color:"#555555"};
+              case 'Eeklo' : return{color:"#555555"};
+              case 'Beveren' : return{color:"#555555"};
+              case 'Evergem' : return{color:"#555555"};
+              case 'Gent' : return{color:"#555555"};
+              case 'Gistel' : return{color:"#555555"};
+              case 'Hamme' : return{color:"#555555"};
+              case 'Jabbeke' : return{color:"#555555"};
+              case 'Kapelle-op-den-Bos' : return{color:"#555555"};
+              case 'Kaprijke' : return{color:"#555555"};
+              case 'Knokke-Heist' : return{color:"#555555"};
+              case 'Koksijde' : return{color:"#555555"};
+              case 'Kruibeke' : return{color:"#555555"};
+              case 'Laarne' : return{color:"#555555"};
+              case 'Lochristi' : return{color:"#555555"};
+              case 'Lokeren' : return{color:"#555555"};
+              case 'Lovendegem' : return{color:"#555555"};
+              case 'Maldegem' : return{color:"#555555"};
+              case 'Mechelen' : return{color:"#555555"};
+              case 'Middelkerke' : return{color:"#555555"};
+              case 'Moerbeke' : return{color:"#555555"};
+              case 'Niel' : return{color:"#555555"};
+              case 'Nieuwpoort' : return{color:"#555555"};
+              case 'Nijlen' : return{color:"#555555"};
+              case 'Koksijde' : return{color:"#555555"};
+              case 'Oostende' : return{color:"#555555"};
+              case 'Oudenburg' : return{color:"#555555"};
+              case 'Puurs' : return{color:"#555555"};
+              case 'Rumst' : return{color:"#555555"};
+              case 'Schelle' : return{color:"#555555"};
+              case 'Schoten' : return{color:"#555555"};
+              case 'Sint-Amands' : return{color:"#555555"};
+              case 'Sint-Gillis-Waas' : return{color:"#555555"};
+              case 'Sint-Laureins' : return{color:"#555555"};
+              case 'Stabroek' : return{color:"#555555"};
+              case 'Stekene' : return{color:"#555555"};
+              case 'Veurne' : return{color:"#555555"};
+              case 'Waarschoot' : return{color:"#555555"};
+              case 'Waasmunster' : return{color:"#555555"};
+              case 'Wachtebeke' : return{color:"#555555"};
+              case 'Wijnegem' : return{color:"#555555"};
+              case 'Willebroek' : return{color:"#555555"};
+              case 'Zele' : return{color:"#555555"};
+              case 'Zelzate' : return{color:"#555555"};
+              case 'Zuienkerke' : return{color:"#555555"};
+              case 'Zwijndrecht' : return{color:"#555555"};
+            }
+          },
+          
+        }).addTo(map);
+        //    L.geoJSON(myd, {style:{color: "#ff0000"}}).addTo(map);
+      });
+
+
+
+      // Pour gérer le on click
+      // https://leafletjs.com/examples/geojson/
+
+
+  </script>
+  
+</body>
+
+</html>
+
+
